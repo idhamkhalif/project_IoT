@@ -1,0 +1,32 @@
+cloud-architecture-diagram
+
+// Title
+title IoT Architecture for MPU-6050, Relay, ESP32, Server, and Mobile App
+
+// IoT Devices
+IoT Devices [color: blue, icon: cpu] {
+  MPU-6050 Sensor [icon: activity]
+  Relay [icon: toggle-right]
+  ESP32 Microcontroller [icon: microchip] // entry point
+}
+
+// Cloud Infrastructure
+Cloud Infrastructure [color: green, icon: cloud] {
+  IoT Core [icon: aws-iot-core] // entry point
+  Lambda Function [icon: aws-lambda]
+  Database [icon: aws-dynamodb]
+  Server [icon: aws-ec2]
+}
+
+// User Interface
+Mobile App [icon: smartphone]
+
+// Connections
+MPU-6050 Sensor > ESP32 Microcontroller
+Relay > ESP32 Microcontroller
+ESP32 Microcontroller > IoT Core
+IoT Core > Lambda Function
+Lambda Function > Database
+Lambda Function > Server
+Mobile App > Server
+
