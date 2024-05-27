@@ -1,0 +1,50 @@
+flowchart-diagram
+
+title MPU-6050 Sensor Reading and Data Display Flowchart
+
+// Define groups for better organization
+Initialization [color: lightblue] {
+  Start Initialization [shape: oval, icon: play]
+  Initialize MPU-6050 [icon: settings]
+  Initialize Relay [icon: settings]
+  Initialize Mobile App Connection [icon: smartphone]
+}
+
+Reading and Processing [color: lightgreen] {
+  Read Sensor Data [icon: activity]
+  Process Sensor Data [icon: cpu]
+  Check Threshold [shape: diamond, icon: alert-triangle]
+}
+
+Relay Control [color: lightcoral] {
+  Activate Relay [icon: toggle-right]
+  Deactivate Relay [icon: toggle-left]
+}
+
+Display Data [color: lightyellow] {
+  Send Data to Mobile App [icon: send]
+  Display Data on Mobile App [icon: smartphone]
+}
+
+End [color: lightgrey] {
+  End Process [shape: oval, icon: stop-circle]
+}
+
+// Define the flow
+Start Initialization > Initialize MPU-6050
+Initialize MPU-6050 > Initialize Relay
+Initialize Relay > Initialize Mobile App Connection
+Initialize Mobile App Connection > Read Sensor Data
+
+Read Sensor Data > Process Sensor Data
+Process Sensor Data > Check Threshold
+
+Check Threshold > Activate Relay: Above Threshold
+Check Threshold > Deactivate Relay: Below Threshold
+
+Activate Relay > Send Data to Mobile App
+Deactivate Relay > Send Data to Mobile App
+
+Send Data to Mobile App > Display Data on Mobile App
+Display Data on Mobile App > End Process
+
