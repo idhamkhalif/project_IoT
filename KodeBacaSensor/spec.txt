@@ -1,2 +1,3 @@
 Mikrokontroler menggunakan : ESP32
 Sensor : MPU - 6050
+Sensor digital : relay
